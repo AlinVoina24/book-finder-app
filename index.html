@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ro">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Book Finder — Caută cărți</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"></script>
+    <!-- <style>
+        :root { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color-scheme: light; }
+        body { margin: 0; padding: 2rem; background:#f7f7fb; }
+        .container { max-width:800px; margin:0 auto; background:#fff; padding:1.5rem; border-radius:8px; box-shadow:0 4px 14px rgba(20,20,50,0.06); }
+        header h1 { margin:0 0 0.5rem 0; font-size:1.5rem; }
+        .search-row { display:flex; gap:.5rem; margin:1rem 0; }
+        .search-row input[type="search"] { flex:1; padding:.6rem .75rem; font-size:1rem; border:1px solid #d0d4df; border-radius:6px; }
+        .search-row button { padding:.6rem .9rem; font-size:1rem; border:none; background:#2563eb; color:#fff; border-radius:6px; cursor:pointer; }
+        .results { margin-top:1rem; min-height:8rem; border:1px dashed #e6e9f0; padding:1rem; border-radius:6px; background:#fbfdff; }
+        .results h2 { margin:0 0 .5rem 0; font-size:1.05rem; }
+        .book-list { list-style:none; padding:0; margin:0; display:grid; gap:.5rem; }
+        .book-item { padding:.6rem; border-radius:6px; background:#fff; border:1px solid #eef2ff; }
+    </style> -->
+</head>
+<body>
+    <main class="container" role="main">
+        <header aria-labelledby="app-title">
+            <h1 id="app-title">Book Finder — Găsește cărți după titlu, autor sau subiect</h1>
+            <p>Introduceți un cuvânt cheie pentru a căuta cărți relevante.</p>
+        </header>
+
+        <form id="search-form" class="search-row" onsubmit="return false;" aria-label="Formular de căutare cărți">
+            <label for="keyword-input" class="visually-hidden">Cuvânt cheie</label>
+            <input id="keyword-input" type="search" name="q" placeholder="Ex: programare, Asimov, istorie" autocomplete="off" />
+            <button id="search-button" type="submit" aria-controls="results">Caută</button>
+        </form>
+
+        <section id="results" class="results" role="region" aria-live="polite" aria-label="Rezultatele căutării">
+            <h2>Rezultate</h2>
+            <!-- Lista de rezultate va fi populată dinamic -->
+            <ul class="book-list" aria-hidden="true"></ul>
+            <p class="empty-message">Introduceți un cuvânt cheie și apăsați "Caută" pentru a vedea rezultate.</p>
+        </section>
+    </main>
+</body>
+</html>
